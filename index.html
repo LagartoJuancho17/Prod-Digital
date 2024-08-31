@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinaciones de Colores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="mostrarColores()">
+    
+    <button onclick="mostrarColores()">Generar Colores</button>
+    <select id="colorMode" onchange="cambiarModo(this.value)">
+        <option value="analogo">Análogo</option>
+        <option value="monocromatico">Monocromático</option>
+        <option value="complementario">Complementario</option>
+        <option value="complementarios-adyacentes">Complementario Adyacente</option>
+    </select>
+    
+    
+
+<div class="container">
+    <div class="column" id="columna1">
+        <div class="hex-code" id="hex1">#FFFFFF</div>
+    </div>
+    <div class="column" id="columna2">
+        <div class="hex-code" id="hex2">#FFFFFF</div>
+    </div>
+    <div class="column" id="columna3">
+        <div class="hex-code" id="hex3">#FFFFFF</div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
