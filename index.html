@@ -6,29 +6,34 @@
     <title>Combinaciones de Colores</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="mostrarColores()">
-    
-    <button onclick="mostrarColores()">Generar Colores</button>
+<body onload="mostrarColores()"> 
+    <div class="menu">
+      <div class="boton">
+        <button onclick="mostrarColores()">Generar Colores</button>
+      </div>
+      
     <select id="colorMode" onchange="cambiarModo(this.value)">
         <option value="analogo">Análogo</option>
         <option value="monocromatico">Monocromático</option>
         <option value="complementario">Complementario</option>
         <option value="complementarios-adyacentes">Complementario Adyacente</option>
     </select>
-    
+    </div>
     
 
 <div class="container">
     <div class="column" id="columna1">
-        <div class="hex-code" id="hex1">#FFFFFF</div>
+        <button class="hex-code" id="hex1" onclick="copyText('hex1')">#FFFFFF</button>
     </div>
     <div class="column" id="columna2">
-        <div class="hex-code" id="hex2">#FFFFFF</div>
+        <button class="hex-code" id="hex2" onclick="copyText('hex2')">#FFFFFF</button>
     </div>
     <div class="column" id="columna3">
-        <div class="hex-code" id="hex3">#FFFFFF</div>
+        <button class="hex-code" id="hex3" onclick="copyText('hex3')">#FFFFFF</button>
     </div>
 </div>
+
+<div id="notification" class="notification hidden">Texto copiado</div>
 
 <script src="script.js"></script>
 
