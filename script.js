@@ -1,4 +1,4 @@
-let currentMode = 'analogo';
+let currentMode = 'analogo'; //Para que inicie en ANALOGO
 
 // Función principal para mostrar colores según el modo actual
 function mostrarColores() {
@@ -87,6 +87,8 @@ function generarComplementariosAdyacentes(baseColor) {
     ];
 }
 
+
+//CHAT GPT:
 // Convertir HEX a HSL
 function hexToHSL(H) {
     let r = 0, g = 0, b = 0;
@@ -167,4 +169,30 @@ function hslToHex(h, s, l) {
     b = Math.round((b + m) * 255).toString(16).padStart(2, '0');
 
     return `#${r}${g}${b}`;
+}
+
+
+
+function copyText(buttonId) {
+    var button = document.getElementById(buttonId);
+
+    // Copiar el texto al portapapeles
+    navigator.clipboard.writeText(button.textContent).then(() => {
+        // Mostrar la notificación
+        mostrarNotificacion("Texto copiado");
+    });
+}
+
+// Función para mostrar la notificación
+function mostrarNotificacion(mensaje) {
+    const notification = document.getElementById('notification');
+    notification.textContent = mensaje;
+    notification.classList.remove('hidden');
+    notification.classList.add('show');
+
+    // Ocultar la notificación después de 2 segundos
+    setTimeout(() => {
+        notification.classList.remove('show');
+        notification.classList.add('hidden');
+    }, 2000);
 }
